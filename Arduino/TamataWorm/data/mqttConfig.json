@@ -1,0 +1,5 @@
+{
+	"mqttServer":"172.24.1.1",
+	"user":"TamataWorm",
+	"bufferSize":3000
+}

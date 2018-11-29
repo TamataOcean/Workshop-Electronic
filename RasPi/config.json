@@ -1,0 +1,18 @@
+{
+    "AppName": "TamataWorm",
+    "Version": "1.1.0",
+    "Copyright": "Copyright Open Source - W3Licence",
+    "alert_tel": "+33 6 12 45 78 96",
+    "alert_email": "contact@tamataocean.Com",
+    "system": {
+        "mqttServer": "172.24.1.1",
+        "mqttTopic": "$aws/things/2C3AE84FBE28/shadow",
+        "influxDB":{
+            "database": "dataworm",
+            "host": "localhost",
+            "port": 8086,
+            "username": "test",
+            "password": "test"
+        }
+    }
+}
