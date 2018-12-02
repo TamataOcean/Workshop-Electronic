@@ -11,12 +11,11 @@
  *  Breadboard & Wires
  */
 
-#include <OneWire.h>
 #include <DallasTemperature.h>
 
 #define PIN_SENSOR_TEMP 7     
 #define PIN_HEAT 6
-#define TARGET_TEMP 30        // Temperature wanted during "On heat" period
+#define TARGET_TEMP 22        // Temperature wanted during "On heat" period
 
 OneWire oneWire_in(PIN_SENSOR_TEMP);
 DallasTemperature sensor_temp(&oneWire_in);
@@ -25,8 +24,12 @@ float temperatureMC = 0;
 void setup(void)
 {
     pinMode(PIN_HEAT, OUTPUT);
-    Serial.begin(9600);
+    
+    Serial.begin(115200);
     Serial.println("TamataSpiru Kit - V1.0");
+    Serial.println("----------------------");
+    Serial.println();
+    
     sensor_temp.begin();
 }
 
@@ -37,7 +40,7 @@ void loop(void)
     temperatureMC = sensor_temp.getTempCByIndex(0);
 
     Serial.println("Temperature : "+ String(temperatureMC ));
-
+    
     /* Thermostat */
     if ( temperatureMC >= TARGET_TEMP ) {
       Serial.println("Heat Off");
@@ -47,5 +50,7 @@ void loop(void)
       Serial.println("Heat On");
       digitalWrite(PIN_HEAT, LOW);
     }
-    delay(5000);
+
+    /* Waiting for ... un ms */
+    delay(1000);
 }

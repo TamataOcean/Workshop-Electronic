@@ -6,10 +6,10 @@
     "alert_email": "contact@tamataocean.Com",
     "system": {
         "mqttServer": "172.24.1.1",
-        "mqttTopic": "$aws/things/2C3AE84FBE28/shadow",
+        "mqttTopic": "$aws/things/2C3AE84FBE4F/shadow",
         "influxDB":{
-            "database": "dataworm",
-            "host": "localhost",
+            "database": "dataromain",
+            "host": "172.24.1.1",
             "port": 8086,
             "username": "test",
             "password": "test"
